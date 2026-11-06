@@ -54,7 +54,6 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        workspace: ['.', './src/express', './src/license-report', './src/mongo']
     steps:
       - uses: actions/checkout@v7
         with:
@@ -64,7 +63,7 @@ jobs:
         with:
           node-version-file: .nvmrc
           cache: 'npm'
-          cache-dependency-path: '${{ matrix.workspace }}/package-lock.json'
+          cache-dependency-path: package-lock.json
       - name: Check dependency tree
         run: >-
           npm i --package-lock-only --dry-run
