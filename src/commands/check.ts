@@ -1,4 +1,3 @@
-import { program } from 'commander';
 import assert from 'node:assert';
 import fs, { type PathLike } from 'node:fs';
 import path from 'node:path';
