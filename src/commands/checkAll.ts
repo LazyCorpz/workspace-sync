@@ -1,6 +1,5 @@
 import assert from 'node:assert';
 import path from 'node:path';
-import { getOrInsert } from '../shims';
 import { PATH_ROOT, pathLikeToString, showError } from '../utils';
 import { check, Lockfile } from './check';
 
@@ -22,7 +21,7 @@ export async function checkAll(
 
         // Performing map union without disrupting the iterator
         for (const [w, v] of workspaceLockfile.workspaces.entries()) {
-            const versions = getOrInsert(workspaces, w, { versions: new Set() });
+            const versions = workspaces.getOrInsert(w, { versions: new Set() });
 
             versions.versions = versions.versions.union(v.versions);
         }
