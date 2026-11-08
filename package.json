@@ -32,7 +32,8 @@
         "*.md",
         "src/",
         "dist/",
-        ".gitignore"
+        ".gitignore",
+        "badge.svg"
     ],
     "dependencies": {
         "commander": "^15.0.0"
