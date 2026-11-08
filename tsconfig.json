@@ -26,6 +26,8 @@
         "noFallthroughCasesInSwitch": true,
         "module": "ESNext",
         "noEmit": false,
+        "downlevelIteration": true,
+        "importHelpers": true,
         "typeRoots": ["./node_modules/@types"],
         "types": ["node"],
         "newLine": "lf",
