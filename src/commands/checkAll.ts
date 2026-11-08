@@ -1,4 +1,3 @@
-import { program } from 'commander';
 import assert from 'node:assert';
 import path from 'node:path';
 import { getOrInsert } from '../shims';
@@ -71,9 +70,3 @@ export async function checkAllAction(baseLockfilePath: string): Promise<void> {
         showError(err);
     }
 }
-
-program
-    .command('check-all')
-    .description('Check workspace lockfile sync across all workspaces')
-    .argument('<base_lockfile>', 'Path to the project root directory or lockfile')
-    .action(checkAllAction);

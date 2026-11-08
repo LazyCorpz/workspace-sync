@@ -285,7 +285,7 @@ export function syncPackage(
  * @param lockfilePath Path to the project directory or lockfile
  * @param options The command options
  */
-async function syncPackageAction(
+export async function syncPackageAction(
     lockfilePath: string,
     options: { dryRun?: boolean }
 ): Promise<void> {
@@ -316,10 +316,3 @@ async function syncPackageAction(
         showError(err);
     }
 }
-
-program
-    .command('sync-package')
-    .description('Sync a lockfile with its package.json, as npm does')
-    .argument('<lockfile>', 'Path to the project directory or lockfile')
-    .option('--dry-run', 'Report the differences without writing them')
-    .action(syncPackageAction);

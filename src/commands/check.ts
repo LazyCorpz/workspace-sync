@@ -525,7 +525,7 @@ export function check(
  * @param baseLockfilePath 
  * @param workspaceLockfilePath 
  */
-async function checkAction(
+export async function checkAction(
     baseLockfilePath: string,
     workspaceLockfilePath: string
 ): Promise<void> {
@@ -550,10 +550,3 @@ async function checkAction(
         showError(err);
     }
 }
-
-program
-    .command('check')
-    .description('Check workspace lockfile sync')
-    .argument('<base_lockfile>', 'Path to the project root directory or lockfile')
-    .argument('<workspace_lockfile>', 'Path to the workspace directory or lockfile')
-    .action(checkAction);
