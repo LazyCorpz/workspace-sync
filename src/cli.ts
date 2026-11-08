@@ -20,8 +20,8 @@ program
 program
     .command('sync-package')
     .description('Sync a lockfile with its package.json, as npm does')
-    .argument('<lockfile>', 'Path to the project directory or lockfile')
-    .option('--dry-run', 'Report the differences without writing them')
+    .argument('<base_lockfile>', 'Path to the project root directory or lockfile')
+    .option('--dry-run', 'Report differences without writing them to the lockfile')
     .action(syncPackageAction);
 
 program
